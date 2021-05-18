@@ -57,12 +57,12 @@ function doMath(id) {
           if (numbers[numbers.length-1] !== undefined) {
             numbers[numbers.length-1] = numbers[numbers.length-1].slice(0, -1);
           }
+          console.log(numbers)
         }
       } else if (id === "=") {
         if (getResult && document.getElementById('doMath').classList.value === "focusCalcOrResult") {
           document.getElementById('doMath').classList.remove("focusCalcOrResult");
           document.getElementById('getResult').classList.add("focusCalcOrResult");
-          console.info(document.getElementById('getResult').classList.value)
         }
       } else if (id === "+" || id === "-" || id === "*" || id === "/") {
         if (numbers[numbers.length-1] !== id && document.getElementById('doMath').classList.value === "focusCalcOrResult") {
@@ -71,7 +71,7 @@ function doMath(id) {
         numbers = new Array();
         document.getElementById('doMath').classList.add("focusCalcOrResult");
         document.getElementById('getResult').classList.remove("focusCalcOrResult");
-        numbers.push(getResult);
+        numbers.push(String(getResult));
         numbers.push(id);
       }
     }
@@ -87,7 +87,7 @@ function doMath(id) {
   // 'try', 'catch' & 'finally' can be removed once buttons are done
   try {
     
-    if (numbers.length >= 2) {
+    if (numbers.length >= 3) {
       getResult = eval(numbers.join(''));
     }
     
@@ -96,11 +96,11 @@ function doMath(id) {
   }
     finally {
       
-      if (Number(getResult) && getResult !== undefined) {
+      if (Number(getResult) && getResult !== undefined || getResult === 0) {
         document.getElementById('getResult').innerHTML = getResult;
       } else {
         // howto only with 'if'? :/
         document.getElementById('getResult').innerHTML = "";
       }
-    }  
+    }
 }
