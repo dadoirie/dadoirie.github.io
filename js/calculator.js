@@ -102,9 +102,4 @@ function doMath(id) {
         document.getElementById('getResult').innerHTML = "";
       }
     }  
-  
-  
-  console.info(document.getElementById('getResult').classList.value + " class")
-  console.info("numbers is "+numbers+" | numbers.length is "+numbers.length+" | getResult is "+getResult);
-  
 }
