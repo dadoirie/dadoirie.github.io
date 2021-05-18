@@ -1,5 +1,6 @@
 'use strict';
 
+
 function toggleLightDark() {
   const stylesheet = document.getElementById("cssLightDark");
   const buttonLightOrDark = document.getElementById("toggleLightOrDark");
