@@ -1,0 +1,52 @@
+body {
+  font-size: 1em;
+  transition-duration: 0.4s;
+}
+
+
+#toggleLightOrDark {
+  transition-duration: 0.6s;
+  width: 50px;
+  border-radius: 2px;
+  margin-top: 1px;
+  margin-right: 2px;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+#outerBorder {
+  width: 95%;
+  height: 20em;
+  margin-top: 0.3em;
+  padding-left: 1em;
+}
+
+#btnGroup {
+  position: absolute;
+  top: 4.5em;
+}
+
+#doMath {
+  margin-top: 0.1em;
+}
+
+#getResult {
+  margin-top: -0.5em;
+}
+
+.focusCalcOrResult {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.button {
+  float: left;
+  width: 23.8%;
+  height: 3.8em;
+  font-weight: bold;
+}
+
+.button:active {
+  transition-duration: 0.5s;
+}
