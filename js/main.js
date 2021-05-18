@@ -15,7 +15,7 @@ function toggleLightDark() {
 
 var bracketsDone = true; // GLOBAL VARIABLE
 var numbers = new Array(); // GLOBAL VARIABLE!
-var getResult;
+var getResult; // GLOBAL VARIABLE
 function doMath(id) {
 
  if (Number(id) || id === "0" || id === "." || id === "(" || id === ")") {
