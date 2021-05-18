@@ -1,0 +1,18 @@
+body {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+#toggleLightOrDark, .button {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.button:active {
+  background-color: #ffffff;
+}
+
+#outerBorder {
+  border: 1px solid #000000;
+}
