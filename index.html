@@ -4,51 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Calculator</title>
+  
+  <title>DadoIrie @ Github</title>
+  
   <link id="cssMain" rel="stylesheet" type="text/css" href="css/main.css" />
   <link id="cssLightDark" rel="stylesheet" type="text/css" href="css/light.css" />
 </head>
 
-<body>
-  
-  <input type="button" id="toggleLightOrDark" onclick="toggleLightDark()" value="dark" />
-  
-  <div id=outerBorder>
+  <body>
+    <!-- 
+    INFO
+    currently mobile only
     
-    <p class="focusCalcOrResult" id="doMath"></p>
-    <p id="getResult"></p>
+    TODO
+    navigation menu
+    script loader & unloader
+    move darkmode button in navigation menu
+    -->
+    <input type="button" id="toggleLightOrDark" onclick="toggleLightDark()" value="dark" />
+    <div id="navigation"></div>
+    <div id="content"></div>
     
-    
-  <div id=btnGroup>
-    <button class="button" id="C" onclick="doMath(this.id)">C</button>
-    <button class="button" id="del" onclick="doMath(this.id)">del</button>
-    <button class="button" id="(" onclick="doMath(this.id)">(</button>
-    <button class="button" id=")" onclick="doMath(this.id)">)</button>
-    
-    <button class="button" id="1" onclick="doMath(this.id)">1</button>
-    <button class="button" id="2" onclick="doMath(this.id)">2</button>
-    <button class="button" id="3" onclick="doMath(this.id)">3</button>
-    <button class="button" id="/" onclick="doMath(this.id)">÷</button>
-    
-    <button class="button" id="4" onclick="doMath(this.id)">4</button>
-    <button class="button" id="5" onclick="doMath(this.id)">5</button>
-    <button class="button" id="6" onclick="doMath(this.id)">6</button>
-    <button class="button" id="*" onclick="doMath(this.id)">×</button>
-    
-    <button class="button" id="7" onclick="doMath(this.id)">7</button>
-    <button class="button" id="8" onclick="doMath(this.id)">8</button>
-    <button class="button" id="9" onclick="doMath(this.id)">9</button>
-    <button class="button" id="-" onclick="doMath(this.id)">-</button>
-    
-    <button class="button" id="0" onclick="doMath(this.id)">0</button>
-    <button class="button" id="." onclick="doMath(this.id)">.</button>
-    <button class="button" id="=" onclick="doMath(this.id)">=</button>
-    <button class="button" id="+" onclick="doMath(this.id)">+</button>
-  </div>
-    
-  </div>
-  
-  <script src="js/calculator.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>

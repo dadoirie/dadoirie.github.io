@@ -1,19 +1,11 @@
 'use strict';
-
-
-function toggleLightDark() {
-  const stylesheet = document.getElementById("cssLightDark");
-  const buttonLightOrDark = document.getElementById("toggleLightOrDark");
-    if (buttonLightOrDark.value === "light") {
-      stylesheet.setAttribute('href',"css/light.css");
-      buttonLightOrDark.value = "dark";
-    }
-    else {
-      stylesheet.setAttribute('href',"css/dark.css");
-      buttonLightOrDark.value = "light";
-    }
-}
-
+/*
+TODO
+  still a lot of work to do
+    even might need to rewrite it :/
+  clean up code
+  
+*/
 var bracketsDone = true; // GLOBAL VARIABLE
 var numbers = new Array(); // GLOBAL VARIABLE!
 var getResult; // GLOBAL VARIABLE
@@ -57,7 +49,6 @@ function doMath(id) {
           if (numbers[numbers.length-1] !== undefined) {
             numbers[numbers.length-1] = numbers[numbers.length-1].slice(0, -1);
           }
-          console.log(numbers)
         }
       } else if (id === "=") {
         if (getResult && document.getElementById('doMath').classList.value === "focusCalcOrResult") {
