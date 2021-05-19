@@ -15,23 +15,23 @@ body {
   right:0;
 }
 
-#outerBorder {
+#calcOuterBorder {
   width: 95%;
   height: 20em;
   margin-top: 0.3em;
   padding-left: 1em;
 }
 
-#btnGroup {
+#calcBtnGroup {
   position: absolute;
   top: 4.5em;
 }
 
-#doMath {
+#calcMath {
   margin-top: 0.1em;
 }
 
-#getResult {
+#calcResult {
   margin-top: -0.5em;
 }
 
@@ -40,13 +40,13 @@ body {
   font-weight: bold;
 }
 
-.button {
+.calcBtn {
   float: left;
   width: 23.8%;
   height: 3.8em;
   font-weight: bold;
 }
 
-.button:active {
+.calcBtn:active {
   transition-duration: 0.5s;
 }

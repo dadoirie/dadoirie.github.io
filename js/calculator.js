@@ -7,91 +7,91 @@ TODO
   
 */
 var bracketsDone = true; // GLOBAL VARIABLE
-var numbers = new Array(); // GLOBAL VARIABLE!
-var getResult; // GLOBAL VARIABLE
-function doMath(id) {
+var calcNumbers = new Array(); // GLOBAL VARIABLE!
+var calcResult; // GLOBAL VARIABLE
+function calcDoMath(id) {
 
  if (Number(id) || id === "0" || id === "." || id === "(" || id === ")") {
-      if (id === "0" || Number(id) && numbers.length === 0) {
-        numbers.push(id)
+      if (id === "0" || Number(id) && calcNumbers.length === 0) {
+        calcNumbers.push(id)
       } else if (id === ".") {
-        if (numbers.length !== 0 && Number(numbers[numbers.length - 1]) && numbers[numbers.length - 1].indexOf(id) === -1 || numbers[numbers.length - 1].indexOf(0) !== -1) {
-          numbers[numbers.length - 1] = numbers[numbers.length - 1] + id;
+        if (calcNumbers.length !== 0 && Number(calcNumbers[calcNumbers.length - 1]) && calcNumbers[calcNumbers.length - 1].indexOf(id) === -1 || calcNumbers[calcNumbers.length - 1].indexOf(0) !== -1) {
+          calcNumbers[calcNumbers.length - 1] = calcNumbers[calcNumbers.length - 1] + id;
         }
       } else if (id === "(" || id === ")") {
         if (id === "(") {
-          if (numbers[numbers.length-1] === undefined || numbers[numbers.length - 1].indexOf(id) === -1 && bracketsDone === true) {
-            numbers.push(id);
+          if (calcNumbers[calcNumbers.length-1] === undefined || calcNumbers[calcNumbers.length - 1].indexOf(id) === -1 && bracketsDone === true) {
+            calcNumbers.push(id);
             bracketsDone = false;
           }
         } else if (id === ")") {
           if (bracketsDone === false) {
-            numbers.push(id);
+            calcNumbers.push(id);
             bracketsDone = true;
           }
         }
-      } else if (Number(id) && Number(numbers[numbers.length-1])) {
-        numbers[numbers.length-1] = numbers[numbers.length-1]+id;
+      } else if (Number(id) && Number(calcNumbers[calcNumbers.length-1])) {
+        calcNumbers[calcNumbers.length-1] = calcNumbers[calcNumbers.length-1]+id;
       } else {
-        numbers.push(id);
+        calcNumbers.push(id);
       }
     } else if (String(id)) {
       if (id === "C") {
-        numbers = new Array();
-        getResult = undefined;
-        document.getElementById('doMath').classList.add("focusCalcOrResult");
-        document.getElementById('getResult').classList.remove("focusCalcOrResult");
+        calcNumbers = new Array();
+        calcResult = undefined;
+        document.getElementById('calcMath').classList.add("focusCalcOrResult");
+        document.getElementById('calcResult').classList.remove("focusCalcOrResult");
       } else if (id === "del") {
-        if (numbers.length !== 0) {
-          if (numbers[numbers.length-1].length === 0) {
-            numbers = numbers.splice(0, numbers.length-1)
+        if (calcNumbers.length !== 0) {
+          if (calcNumbers[calcNumbers.length-1].length === 0) {
+            calcNumbers = calcNumbers.splice(0, calcNumbers.length-1)
           }
-          if (numbers[numbers.length-1] !== undefined) {
-            numbers[numbers.length-1] = numbers[numbers.length-1].slice(0, -1);
+          if (calcNumbers[calcNumbers.length-1] !== undefined) {
+            calcNumbers[calcNumbers.length-1] = calcNumbers[calcNumbers.length-1].slice(0, -1);
           }
         }
       } else if (id === "=") {
-        if (getResult && document.getElementById('doMath').classList.value === "focusCalcOrResult") {
-          document.getElementById('doMath').classList.remove("focusCalcOrResult");
-          document.getElementById('getResult').classList.add("focusCalcOrResult");
+        if (calcResult && document.getElementById('calcMath').classList.value === "focusCalcOrResult") {
+          document.getElementById('calcMath').classList.remove("focusCalcOrResult");
+          document.getElementById('calcResult').classList.add("focusCalcOrResult");
         }
       } else if (id === "+" || id === "-" || id === "*" || id === "/") {
-        if (numbers[numbers.length-1] !== id && document.getElementById('doMath').classList.value === "focusCalcOrResult") {
-          numbers.push(id);
-      } else if (document.getElementById('getResult').classList.value === "focusCalcOrResult") {
-        numbers = new Array();
-        document.getElementById('doMath').classList.add("focusCalcOrResult");
-        document.getElementById('getResult').classList.remove("focusCalcOrResult");
-        numbers.push(String(getResult));
-        numbers.push(id);
+        if (calcNumbers[calcNumbers.length-1] !== id && document.getElementById('calcMath').classList.value === "focusCalcOrResult") {
+          calcNumbers.push(id);
+      } else if (document.getElementById('calcResult').classList.value === "focusCalcOrResult") {
+        calcNumbers = new Array();
+        document.getElementById('calcMath').classList.add("focusCalcOrResult");
+        document.getElementById('calcResult').classList.remove("focusCalcOrResult");
+        calcNumbers.push(String(calcResult));
+        calcNumbers.push(id);
       }
     }
   }
   var from = ["*", "/"];
   var to = ["×", "÷"];
-  var calculation = numbers.join('');
+  var calculation = calcNumbers.join('');
   for (let i in from) {
     calculation = calculation.replaceAll(from[i], to[i]);
   }
-  document.getElementById('doMath').innerHTML = calculation;
+  document.getElementById('calcMath').innerHTML = calculation;
   
   // 'try', 'catch' & 'finally' can be removed once buttons are done
   try {
     
-    if (numbers.length >= 3) {
-      getResult = eval(numbers.join(''));
+    if (calcNumbers.length >= 3) {
+      calcResult = eval(calcNumbers.join(''));
     }
     
   } catch (e) {
-    getResult = undefined;
+    calcResult = undefined;
   }
     finally {
       
-      if (Number(getResult) && getResult !== undefined || getResult === 0) {
-        document.getElementById('getResult').innerHTML = getResult;
+      if (Number(calcResult) && calcResult !== undefined || calcResult === 0) {
+        document.getElementById('calcResult').innerHTML = calcResult;
       } else {
         // howto only with 'if'? :/
-        document.getElementById('getResult').innerHTML = "";
+        document.getElementById('calcResult').innerHTML = "";
       }
     }
 }

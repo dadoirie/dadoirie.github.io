@@ -3,16 +3,16 @@ body {
   background-color: #ffffff;
 }
 
-#toggleLightOrDark, .button {
+#toggleLightOrDark, .calcBtn {
   background-color: #333333;
   color: #ffffff;
   border: 1px solid #000000;
 }
 
-.button:active {
+.calcBtn:active {
   background-color: #ffffff;
 }
 
-#outerBorder {
+#calcOuterBorder {
   border: 1px solid #000000;
 }
