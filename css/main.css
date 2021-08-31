@@ -14,39 +14,3 @@ body {
   top:0;
   right:0;
 }
-
-#calcOuterBorder {
-  width: 95%;
-  height: 20em;
-  margin-top: 0.3em;
-  padding-left: 1em;
-}
-
-#calcBtnGroup {
-  position: absolute;
-  top: 4.5em;
-}
-
-#calcMath {
-  margin-top: 0.1em;
-}
-
-#calcResult {
-  margin-top: -0.5em;
-}
-
-.focusCalcOrResult {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.calcBtn {
-  float: left;
-  width: 23.8%;
-  height: 3.8em;
-  font-weight: bold;
-}
-
-.calcBtn:active {
-  transition-duration: 0.5s;
-}
